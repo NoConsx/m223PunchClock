@@ -15,10 +15,17 @@ public class EntryService {
     }
 
     public Entry createEntry(Entry entry) {
+        System.out.println(entry);
         return entryRepository.saveAndFlush(entry);
     }
 
     public List<Entry> findAll() {
         return entryRepository.findAll();
+    }
+
+    public void deleteEntry(long id) { entryRepository.deleteById(id); }
+
+    public Entry updateEntry(Entry entry) {
+        return entryRepository.save(entry);
     }
 }
